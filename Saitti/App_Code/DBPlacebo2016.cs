@@ -36,6 +36,8 @@ namespace JAMK.ICT.Data
             DataSet ds = new DataSet();
             da.Fill(ds, taulu);
             viesti = "Tiedot haettu onnistuneesti tietokannasta " + myConn.DataSource;
+                myConn.Close();
+                myConn = null;
             return ds.Tables[taulu];
         }
         catch (Exception ex)
